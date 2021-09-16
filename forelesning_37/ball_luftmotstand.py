@@ -28,7 +28,7 @@ def main():
     r[0, :] = r0
 
     for i in range(n - 1):
-        a[] = - (D/v) * abs(v) * v - g * j
+        # a[] = - (D/v) * abs(v) * v - g * j
         v[i + 1, :] = v[i, :] + a * dt
         r[i + 1, :] = r[i, :] + v[i + 1, :] * dt
         t[i + 1] = t[i] + dt
