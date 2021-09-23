@@ -8,7 +8,7 @@ def main():
     dt = t[1] - t[0]
     a = zeros(len(t))
     v = zeros(len(t))
-    v[0] = 0
+    v[0] = 0.0  # Initialverdiproblemet (antatt start-fart)
 
     for i in range(len(t)):
         a[i] = F[i] / m_ball
@@ -27,6 +27,8 @@ def main():
     ylabel('v[m/s]')
     xlabel('t[s] x 1e-3')
     show()
+
+    print(f'Velocity as the ball leaves the bat is {v[len(v) - 1]:.2f} m/s')
 
 
 if __name__ == '__main__':
