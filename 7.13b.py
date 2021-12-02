@@ -8,8 +8,8 @@ def y_direction(t, theta):
 def main():
     theta_0 = 30    # degrees
     t_0 = 0         # initial-time
-    t_1 = 1000      # arbitrary long end
-    dt = 0.01
+    t_1 = 10        # arbitrary long end
+    dt = 0.001
     steps = int(t_1 / dt)
     arrow_landing = 0
 
@@ -21,8 +21,9 @@ def main():
     while True:
         r[i, 0] = 50 * t[i]
         r[i, 1] = y_direction(t[i], theta_0)
-        if i > 50 and r[i, 1] <= 0:
-            arrow_landing = i
+        i += 1
+        if r[i - 1, 0] >= 50:
+            arrow_landing = i - 1
             plot(r[range(0, arrow_landing), 0], r[range(0, arrow_landing), 1])
             arrow_landing = 0
             r[:] = ([0, 0])
@@ -34,10 +35,7 @@ def main():
                 break
             theta_steps += 1
             i = 0
-        i += 1
 
-    ylim(0, 650)
-    xlim(0, 650)
     xlabel('x[m]')
     ylabel('y[m]')
     legend(['θ = 30°', 'θ = 40°', 'θ = 50°'])
