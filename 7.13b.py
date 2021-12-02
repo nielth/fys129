@@ -28,21 +28,20 @@ def main():
             r[:] = ([0, 0])
             if theta_steps == 0:
                 theta_0 = 40
-            elif theta_steps == 2:
+            elif theta_steps == 1:
                 theta_0 = 50
-            elif theta_steps == 3:
+            elif theta_steps == 2:
                 break
             theta_steps += 1
             i = 0
         i += 1
 
-    # plot(r[range(0, arrow_landing), 0], r[range(0, arrow_landing), 1])
     ylim(0, 650)
     xlim(0, 650)
-    legend(['θ = 30°', 'θ = 40°', 'θ = 50°'])
     xlabel('x[m]')
     ylabel('y[m]')
-    savefig('7.13b.jpg')
+    legend(['θ = 30°', 'θ = 40°', 'θ = 50°'])
+    savefig('7.13b.svg')
     show()
 
 
