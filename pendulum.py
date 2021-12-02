@@ -7,11 +7,11 @@ def main():
     m = 5
     L0 = 5
 
-    r0x = 0.
-    r0y = -5.
+    r0x = 0.61
+    r0y = -0.81
 
-    v0x = 0.
-    v0y = 0.
+    v0x = 4.
+    v0y = 1.
 
     r0 = array([r0x, r0y])
     v0 = array([v0x, v0y])
@@ -34,8 +34,6 @@ def main():
         t[i + 1] = t[i] * dt
 
     plot(r[:, 0], r[:, 1])
-    xlim(-15, 15)
-    ylim(-13, 1)
     grid()
     show()
 
